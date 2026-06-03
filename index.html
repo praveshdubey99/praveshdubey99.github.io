@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pravesh Kumar — Senior iOS Developer & Mobile Team Lead</title>
+<meta name="description" content="Pravesh Kumar — Senior iOS Developer & Mobile Team Lead with 11+ years building and shipping high-performance Swift / SwiftUI applications across health, wellness, and productivity.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Hanken+Grotesk:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0C121E;
+    --bg-2:#111929;
+    --card:#141D2D;
+    --ink:#E9ECF3;
+    --slate:#9BA4B6;
+    --slate-2:#6E7789;
+    --line:#222D40;
+    --line-2:#1B2433;
+    --accent:#6FA8DC;
+    --accent-deep:#5b93c9;
+    --maxw:1080px;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--bg);
+    color:var(--ink);
+    font-family:'Hanken Grotesk',sans-serif;
+    font-weight:400;line-height:1.62;
+    -webkit-font-smoothing:antialiased;overflow-x:hidden;
+  }
+  body::before{
+    content:"";position:fixed;inset:0;z-index:0;pointer-events:none;
+    background:radial-gradient(1100px 560px at 80% -10%, rgba(111,168,220,.10), transparent 60%);
+  }
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 30px;position:relative;z-index:2}
+
+  nav{position:fixed;top:0;left:0;right:0;z-index:50;background:rgba(12,18,30,.6);backdrop-filter:blur(10px);border-bottom:1px solid transparent;transition:border-color .35s,background .35s}
+  nav.scrolled{border-bottom:1px solid var(--line);background:rgba(12,18,30,.9)}
+  .nav-inner{max-width:var(--maxw);margin:0 auto;padding:18px 30px;display:flex;justify-content:space-between;align-items:center}
+  .brand{font-family:'JetBrains Mono',monospace;font-size:.8rem;letter-spacing:.06em;color:var(--ink);font-weight:500}
+  .nav-links{display:flex;gap:30px;font-size:.86rem;letter-spacing:.01em}
+  .nav-links a{color:var(--slate);text-decoration:none;transition:color .25s}
+  .nav-links a:hover{color:var(--ink)}
+  @media(max-width:640px){.nav-links{display:none}}
+
+  header{padding:160px 0 88px}
+  .hero-grid{display:grid;grid-template-columns:1fr 290px;gap:64px;align-items:start}
+  @media(max-width:860px){.hero-grid{grid-template-columns:1fr;gap:46px}}
+  .eyebrow{font-family:'JetBrains Mono',monospace;font-size:.76rem;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);margin-bottom:24px;display:flex;align-items:center;gap:12px}
+  .eyebrow::before{content:"";width:28px;height:2px;background:var(--accent);display:inline-block}
+  h1{font-family:'Fraunces',serif;font-weight:500;font-size:clamp(3rem,8.2vw,5.8rem);line-height:1;letter-spacing:-.02em;color:var(--ink)}
+  .role{font-family:'Hanken Grotesk',sans-serif;font-weight:500;font-size:clamp(1.15rem,2.6vw,1.55rem);color:var(--accent);margin-top:20px;letter-spacing:.01em}
+  .lede{max-width:600px;margin-top:24px;font-size:1.1rem;color:var(--slate);line-height:1.7}
+  .cta-row{margin-top:36px;display:flex;gap:13px;flex-wrap:wrap}
+  .btn{font-size:.92rem;text-decoration:none;padding:13px 24px;border-radius:4px;transition:.26s;display:inline-flex;align-items:center;gap:8px;font-weight:500;letter-spacing:.01em}
+  .btn-primary{background:var(--accent);color:#0A1018}
+  .btn-primary:hover{background:var(--accent-deep);transform:translateY(-1px)}
+  .btn-ghost{border:1px solid var(--line);color:var(--ink);background:var(--card)}
+  .btn-ghost:hover{border-color:var(--accent);color:var(--accent)}
+
+  .spec{border:1px solid var(--line);border-radius:8px;background:var(--card);margin-top:54px;box-shadow:0 24px 50px -32px rgba(0,0,0,.7)}
+  @media(max-width:860px){.spec{margin-top:0}}
+  .spec-head{font-family:'JetBrains Mono',monospace;font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;color:var(--slate-2);padding:16px 18px 14px;border-bottom:1px solid var(--line-2)}
+  .spec-row{display:flex;justify-content:space-between;gap:16px;padding:13px 18px;border-bottom:1px solid var(--line-2);font-size:.92rem}
+  .spec-row:last-child{border-bottom:none}
+  .spec-row .k{color:var(--slate-2);font-size:.82rem;letter-spacing:.02em}
+  .spec-row .v{color:var(--ink);text-align:right;font-weight:600}
+  .spec-row .v .dot{display:inline-block;width:7px;height:7px;border-radius:50%;background:#3ec487;margin-right:7px;vertical-align:middle;box-shadow:0 0 8px rgba(62,196,135,.6)}
+
+  section{padding:78px 0;position:relative;z-index:2}
+  .sec-label{font-family:'JetBrains Mono',monospace;font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin-bottom:30px;display:flex;align-items:center;gap:14px}
+  .sec-label .num{color:var(--slate-2)}
+  .sec-label::after{content:"";flex:1;height:1px;background:var(--line)}
+  h2{font-family:'Fraunces',serif;font-weight:500;font-size:clamp(1.8rem,4vw,2.6rem);line-height:1.14;letter-spacing:-.01em;margin-bottom:20px;color:var(--ink)}
+  .prose{max-width:660px;font-size:1.08rem;color:var(--slate);line-height:1.74}
+  .prose strong{color:var(--ink);font-weight:600}
+
+  .xp{border-top:1px solid var(--line)}
+  .job{display:grid;grid-template-columns:190px 1fr;gap:42px;padding:36px 0;border-bottom:1px solid var(--line)}
+  @media(max-width:760px){.job{grid-template-columns:1fr;gap:14px}}
+  .job-meta .when{font-family:'JetBrains Mono',monospace;font-size:.78rem;color:var(--accent);font-weight:500}
+  .job-meta .where{font-size:.85rem;color:var(--slate-2);margin-top:6px}
+  .job-title{font-family:'Fraunces',serif;font-size:1.42rem;font-weight:500;color:var(--ink)}
+  .job-co{color:var(--accent);font-weight:600;margin:3px 0 16px;font-size:.98rem}
+  .job ul{list-style:none;display:flex;flex-direction:column;gap:10px}
+  .job li{position:relative;padding-left:20px;color:var(--slate);font-size:.97rem;line-height:1.6}
+  .job li::before{content:"";position:absolute;left:0;top:10px;width:5px;height:5px;border-radius:50%;background:var(--accent)}
+
+  .feature{border:1px solid var(--line);border-radius:10px;overflow:hidden;background:var(--card);display:grid;grid-template-columns:1fr 1.15fr;box-shadow:0 30px 60px -40px rgba(0,0,0,.8)}
+  @media(max-width:760px){.feature{grid-template-columns:1fr}}
+  .feature-art{background:linear-gradient(150deg,#1a2942,#0e1726);min-height:300px;position:relative;display:flex;flex-direction:column;justify-content:flex-end;padding:30px;color:#fff}
+  .feature-art::after{content:"";position:absolute;inset:0;background:radial-gradient(360px 220px at 75% 20%, rgba(111,168,220,.22), transparent 60%)}
+  .feature-art::before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.045) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.045) 1px,transparent 1px);background-size:34px 34px}
+  .feature-art .badge{position:absolute;top:22px;left:22px;z-index:1;font-family:'JetBrains Mono',monospace;font-size:.66rem;letter-spacing:.1em;text-transform:uppercase;color:#c4d2e6;border:1px solid rgba(255,255,255,.16);padding:6px 11px;border-radius:30px}
+  .feature-art .mono{position:relative;z-index:1;font-family:'Fraunces',serif;font-size:2.4rem;font-weight:500;letter-spacing:-.01em}
+  .feature-art .sub{position:relative;z-index:1;font-family:'JetBrains Mono',monospace;font-size:.72rem;color:#9fb3cc;margin-top:6px;letter-spacing:.04em}
+  .feature-body{padding:38px 36px}
+  .feature-body h3{font-family:'Fraunces',serif;font-size:1.7rem;font-weight:500;margin-bottom:8px;color:var(--ink)}
+  .feature-body .stack{font-family:'JetBrains Mono',monospace;font-size:.72rem;color:var(--slate-2);letter-spacing:.02em;margin-bottom:20px}
+  .feature-body p{color:var(--slate);font-size:.98rem;line-height:1.7;margin-bottom:13px}
+
+  .skill-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
+  @media(max-width:680px){.skill-grid{grid-template-columns:1fr}}
+  .skill-cat{border:1px solid var(--line);border-radius:8px;padding:24px;background:var(--card)}
+  .skill-cat h4{font-family:'JetBrains Mono',monospace;font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);margin-bottom:15px}
+  .tags{display:flex;flex-wrap:wrap;gap:8px}
+  .tag{font-size:.85rem;color:var(--ink);background:var(--bg-2);border:1px solid var(--line);padding:6px 13px;border-radius:5px;transition:.22s;cursor:default}
+  .tag:hover{border-color:var(--accent);color:var(--accent)}
+
+  .edu-row{display:flex;justify-content:space-between;align-items:baseline;gap:20px;padding:22px 0;border-bottom:1px solid var(--line);flex-wrap:wrap}
+  .edu-row .deg{font-family:'Fraunces',serif;font-size:1.2rem;font-weight:500;color:var(--ink)}
+  .edu-row .inst{color:var(--slate-2);font-size:.92rem;margin-top:3px}
+  .edu-row .yr{font-family:'JetBrains Mono',monospace;color:var(--accent);font-size:.85rem;font-weight:500}
+
+  .contact{text-align:center;padding:104px 0 84px}
+  .contact h2{font-size:clamp(2rem,5vw,3.4rem);margin-bottom:16px}
+  .contact .prose{margin:0 auto 34px}
+  .contact-links{display:flex;gap:13px;justify-content:center;flex-wrap:wrap}
+  footer{border-top:1px solid var(--line);padding:30px 0;text-align:center}
+  footer p{font-family:'JetBrains Mono',monospace;font-size:.72rem;color:var(--slate-2);letter-spacing:.03em}
+
+  .reveal{opacity:0;transform:translateY(22px);transition:opacity .75s cubic-bezier(.2,.7,.3,1),transform .75s cubic-bezier(.2,.7,.3,1)}
+  .reveal.in{opacity:1;transform:none}
+  .h-anim{opacity:0;transform:translateY(18px);animation:rise .85s cubic-bezier(.2,.7,.3,1) forwards}
+  @keyframes rise{to{opacity:1;transform:none}}
+  .d1{animation-delay:.05s}.d2{animation-delay:.16s}.d3{animation-delay:.27s}.d4{animation-delay:.38s}.d5{animation-delay:.49s}.d6{animation-delay:.6s}
+  @media(prefers-reduced-motion:reduce){.reveal,.h-anim{opacity:1;transform:none;animation:none;transition:none}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<nav id="nav">
+  <div class="nav-inner">
+    <div class="brand">Pravesh Kumar</div>
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="#experience">Experience</a>
+      <a href="#work">Work</a>
+      <a href="#skills">Skills</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<header>
+  <div class="wrap">
+    <div class="hero-grid">
+      <div>
+        <div class="eyebrow h-anim d1">iOS Engineering &middot; Mobile Leadership</div>
+        <h1 class="h-anim d2">Pravesh Kumar</h1>
+        <div class="role h-anim d3">Senior iOS Developer &amp; Mobile Team Lead</div>
+        <p class="lede h-anim d4">Eleven years building and shipping high-performance mobile applications across health, wellness, and productivity — owning the full product cycle from architecture through to App&nbsp;Store delivery.</p>
+        <div class="cta-row h-anim d5">
+          <a class="btn btn-primary" href="#contact">Get in touch &rarr;</a>
+          <a class="btn btn-ghost" href="#work">View work</a>
+        </div>
+      </div>
+      <div class="spec h-anim d6">
+        <div class="spec-head">Profile</div>
+        <div class="spec-row"><span class="k">Experience</span><span class="v">11+ years</span></div>
+        <div class="spec-row"><span class="k">Focus</span><span class="v">Swift &middot; SwiftUI</span></div>
+        <div class="spec-row"><span class="k">Role</span><span class="v">iOS Lead</span></div>
+        <div class="spec-row"><span class="k">Shipped</span><span class="v">15+ apps</span></div>
+        <div class="spec-row"><span class="k">Based</span><span class="v">India</span></div>
+        <div class="spec-row"><span class="k">Status</span><span class="v"><span class="dot"></span>Open to roles</span></div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<section id="about">
+  <div class="wrap">
+    <div class="sec-label reveal"><span class="num">01</span> &mdash; About</div>
+    <h2 class="reveal">Engineers who ship, and lead teams that ship with them.</h2>
+    <p class="prose reveal">Results-driven Senior iOS Developer with a track record of owning full product cycles — from architecture design and API integration through to App Store delivery and post-release monitoring. Currently the <strong>sole iOS engineer and mobile team lead at Thinkverse</strong>, driving cross-platform strategy alongside Android and backend teams. Equally at home designing modular, testable architectures and mentoring developers toward modern Swift practices.</p>
+  </div>
+</section>
+
+<section id="experience">
+  <div class="wrap">
+    <div class="sec-label reveal"><span class="num">02</span> &mdash; Experience</div>
+    <div class="xp">
+
+      <div class="job reveal">
+        <div class="job-meta">
+          <div class="when">Jan 2026 — Present</div>
+          <div class="where">Noida, India</div>
+        </div>
+        <div>
+          <div class="job-title">Senior iOS Developer &amp; Mobile Team Lead</div>
+          <div class="job-co">Thinkverse</div>
+          <ul>
+            <li>Sole iOS engineer owning the full product lifecycle — architecture decisions, API integration, App Store delivery, and post-release monitoring.</li>
+            <li>Lead the mobile team across iOS and Android: feature scoping, API contract discussions, sprint planning, and cross-platform consistency.</li>
+            <li>Primary iOS voice in cross-functional work with backend, product, and design — embedding platform best practices early in every feature cycle.</li>
+            <li>Continued development of the Sharp Rewards iOS app, iterating on features, performance, and UI in Swift and SwiftUI.</li>
+            <li>Established mobile engineering standards: code-review protocols, branching strategy, and end-to-end release management.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="job reveal">
+        <div class="job-meta">
+          <div class="when">Jul 2014 — Dec 2025</div>
+          <div class="where">Noida, India &middot; 11.5 yrs</div>
+        </div>
+        <div>
+          <div class="job-title">Senior iOS Application Developer</div>
+          <div class="job-co">MCN Solutions Pvt Ltd</div>
+          <ul>
+            <li>Led a team of 5 iOS developers across planning, architecture, code review, and mentoring — shipping 15+ apps across health, wellness, and productivity.</li>
+            <li>Architected modular, testable codebases with MVVM and VIPER, establishing clear module boundaries and coding standards that simplified maintenance and onboarding.</li>
+            <li>Integrated RESTful APIs, Core Data, HealthKit, and Firebase to power real-time sync, analytics, and health-monitoring features.</li>
+            <li>Implemented In-App Purchases, background fetch, and push notifications — contributing to a 25% revenue increase in the flagship product.</li>
+            <li>Profiled and optimised with Instruments and GCD, reducing average app launch time by 30% and eliminating UI jank in scroll-heavy views.</li>
+            <li>Built CI/CD pipelines with Bitrise and Fastlane into TestFlight, accelerating release cadence by 50% and cutting manual deployment errors.</li>
+            <li>Drove team-wide adoption of Swift Concurrency (Async/Await) and Combine through internal knowledge-sharing sessions.</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section id="work">
+  <div class="wrap">
+    <div class="sec-label reveal"><span class="num">03</span> &mdash; Featured Work</div>
+    <div class="feature reveal">
+      <div class="feature-art">
+        <span class="badge">iOS &middot; Production</span>
+        <span class="mono">Sharp Rewards</span>
+        <span class="sub">Rewards &amp; engagement platform</span>
+      </div>
+      <div class="feature-body">
+        <h3>Sharp Rewards</h3>
+        <div class="stack">Swift · SwiftUI · MVVM · RESTful APIs · Firebase · IAP</div>
+        <p>A rewards-driven personal and professional growth platform where users earn, track, and redeem points tied to skill development, career milestones, and measurable performance targets.</p>
+        <p>Sole iOS engineer across the full product lifecycle — designed the architecture, integrated the APIs, built the rewards wallet, and managed every App Store submission from initial launch through ongoing iterations.</p>
+        <p>Implemented real-time wallet synchronisation, push-notification campaigns, and dynamic reward catalogues, directly improving user retention and engagement.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="wrap">
+    <div class="sec-label reveal"><span class="num">04</span> &mdash; Capabilities</div>
+    <div class="skill-grid">
+      <div class="skill-cat reveal">
+        <h4>Languages &amp; UI</h4>
+        <div class="tags"><span class="tag">Swift</span><span class="tag">Objective-C</span><span class="tag">SwiftUI</span><span class="tag">UIKit</span><span class="tag">Core Animation</span><span class="tag">Core Graphics</span></div>
+      </div>
+      <div class="skill-cat reveal">
+        <h4>Concurrency &amp; Data</h4>
+        <div class="tags"><span class="tag">Combine</span><span class="tag">Async/Await</span><span class="tag">GCD</span><span class="tag">Core Data</span><span class="tag">Keychain</span><span class="tag">RESTful APIs</span><span class="tag">Firebase</span></div>
+      </div>
+      <div class="skill-cat reveal">
+        <h4>Platform APIs</h4>
+        <div class="tags"><span class="tag">HealthKit</span><span class="tag">Push Notifications</span><span class="tag">In-App Purchases</span><span class="tag">Background Fetch</span></div>
+      </div>
+      <div class="skill-cat reveal">
+        <h4>Architecture</h4>
+        <div class="tags"><span class="tag">MVVM</span><span class="tag">VIPER</span><span class="tag">Clean Architecture</span><span class="tag">MVC</span></div>
+      </div>
+      <div class="skill-cat reveal">
+        <h4>DevOps &amp; Tooling</h4>
+        <div class="tags"><span class="tag">Xcode</span><span class="tag">Git</span><span class="tag">Fastlane</span><span class="tag">Bitrise</span><span class="tag">TestFlight</span><span class="tag">Instruments</span><span class="tag">XCTest</span><span class="tag">App Store Connect</span></div>
+      </div>
+      <div class="skill-cat reveal">
+        <h4>Practices</h4>
+        <div class="tags"><span class="tag">Agile / Scrum</span><span class="tag">CI/CD</span><span class="tag">Code Review</span><span class="tag">TDD</span><span class="tag">Technical Mentoring</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="education">
+  <div class="wrap">
+    <div class="sec-label reveal"><span class="num">05</span> &mdash; Education</div>
+    <div class="reveal">
+      <div class="edu-row">
+        <div>
+          <div class="deg">Master of Computer Applications (MCA)</div>
+          <div class="inst">Uttar Pradesh Technical University (UPTU)</div>
+        </div>
+        <div class="yr">2013</div>
+      </div>
+      <div class="edu-row">
+        <div>
+          <div class="deg">B.Sc — Mathematics</div>
+          <div class="inst">Chhatrapati Shahu Ji Maharaj University (CSJMU)</div>
+        </div>
+        <div class="yr">2009</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="contact">
+  <div class="wrap">
+    <div class="sec-label reveal" style="justify-content:center"><span class="num">06</span> &mdash; Contact</div>
+    <h2 class="reveal">Let&rsquo;s build something worth shipping.</h2>
+    <p class="prose reveal">Open to Senior iOS and Mobile Lead opportunities. The fastest way to reach me is email or LinkedIn.</p>
+    <div class="contact-links reveal">
+      <a class="btn btn-primary" href="mailto:praveshdubey99@gmail.com">praveshdubey99@gmail.com</a>
+      <a class="btn btn-ghost" href="https://www.linkedin.com/in/pravesh-dubey-896bab48/" target="_blank" rel="noopener">LinkedIn &rarr;</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p>&copy; <span id="yr"></span> Pravesh Kumar</p>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('yr').textContent = new Date().getFullYear();
+  const nav = document.getElementById('nav');
+  addEventListener('scroll', () => nav.classList.toggle('scrolled', scrollY > 40));
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} });
+  }, {threshold:.12, rootMargin:'0px 0px -40px 0px'});
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+</script>
+</body>
+</html>
