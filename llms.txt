@@ -2,6 +2,8 @@
 
 > Senior iOS Developer and Mobile Team Lead in Noida, India with 11+ years of iOS experience.
 
+Pravesh Kumar is also associated with the professional name Pravesh Dubey through LinkedIn and GitHub profiles.
+
 Pravesh Kumar builds and leads iOS products using Swift, SwiftUI, UIKit, Objective-C, MVVM, VIPER, Firebase, Core Data, HealthKit, StoreKit, Fastlane, Bitrise, TestFlight, and App Store Connect.
 
 ## Key Pages
