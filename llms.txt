@@ -1,0 +1,22 @@
+# Pravesh Kumar
+
+> Senior iOS Developer and Mobile Team Lead in Noida, India with 11+ years of iOS experience.
+
+Pravesh Kumar builds and leads iOS products using Swift, SwiftUI, UIKit, Objective-C, MVVM, VIPER, Firebase, Core Data, HealthKit, StoreKit, Fastlane, Bitrise, TestFlight, and App Store Connect.
+
+## Key Pages
+
+- Portfolio: https://praveshdubey99.github.io/
+- Resume: https://praveshdubey99.github.io/assets/Pravesh_Kumar_Resume.docx
+- LinkedIn: https://www.linkedin.com/in/pravesh-dubey-ios/
+- GitHub: https://github.com/praveshdubey99
+
+## Featured Work
+
+- Sharp Rewards: rewards wallet and points platform, built and led end-to-end as sole iOS engineer and mobile lead.
+- HoneyDew: To-Do Lists & Tasks: shared family and couple task app with real-time sync, reminders, push notifications, and subscriptions.
+
+## Contact
+
+Email: praveshdubey99@gmail.com
+Location: Noida, India
