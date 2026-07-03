@@ -1,0 +1,5 @@
+Republish trigger file — created by GitHub Copilot assistant to trigger GitHub Pages rebuild.
+
+Timestamp: 2026-07-03T00:00:00Z
+
+If you prefer a different change, tell me what to modify instead.
