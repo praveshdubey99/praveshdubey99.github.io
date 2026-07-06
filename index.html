@@ -297,6 +297,10 @@
                  position: relative;
                  z-index: 1;
              }
+             /* tighter vertical rhythm for the main content sections */
+             #about, #experience, #skills, #work, #education {
+                 padding-block: clamp(40px, 6vh, 76px);
+             }
              .eyebrow {
                  font-family: var(--font-mono);
                  font-size: 12.5px;
@@ -1556,6 +1560,64 @@
                     window.scrollTo({ top: y, behavior: reduce ? 'auto' : 'smooth' });
                 });
             });
+        })();
+    </script>
+    <script>
+        /* ===== GA4 click tracking — every button & link, no markup changes ===== */
+        (function () {
+            if (typeof gtag !== 'function') return;
+
+            /* "Email me" -> tap_email_me (GA4 event names: max 40 chars) */
+            function slug(text) {
+                return String(text)
+                    .toLowerCase()
+                    .replace(/&/g, ' and ')
+                    .replace(/[^a-z0-9]+/g, '_')
+                    .replace(/^_+|_+$/g, '')
+                    .slice(0, 36);
+            }
+
+            /* Human-readable name for the element that was tapped */
+            function labelFor(el) {
+                var aria = el.getAttribute('aria-label');
+                if (aria) return aria;
+                var text = (el.textContent || '').replace(/\s+/g, ' ').trim();
+                if (text) return text;
+                if (el.id) return el.id;
+                return el.tagName.toLowerCase();
+            }
+
+            /* Which part of the page it lives in (nav, footer, or section id) */
+            function sectionFor(el) {
+                if (el.closest('nav')) return 'nav';
+                if (el.closest('footer')) return 'footer';
+                var sec = el.closest('section[id], header');
+                if (sec) return sec.id || 'hero';
+                return 'page';
+            }
+
+            document.addEventListener('click', function (ev) {
+                var el = ev.target.closest('a, button');
+                if (!el) return;
+
+                var label = labelFor(el);
+                var href = el.getAttribute('href') || '';
+                var params = {
+                    button_name: label,
+                    section: sectionFor(el),
+                    link_url: href,
+                    outbound: /^https?:\/\//.test(href) && href.indexOf(location.hostname) === -1,
+                    transport_type: 'beacon'
+                };
+
+                /* One clearly-named event per button, e.g.
+                   tap_email_me, tap_download_resume, tap_get_in_touch,
+                   tap_view_selected_work, tap_view_on_the_app_store,
+                   tap_linkedin, tap_github, tap_resume,
+                   tap_about / tap_experience / tap_stack / tap_work / tap_contact (nav),
+                   tap_toggle_light_dark_theme (theme toggle) */
+                gtag('event', 'tap_' + slug(label), params);
+            }, true);
         })();
     </script>
 </body>
