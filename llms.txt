@@ -9,7 +9,7 @@ Pravesh Kumar builds and leads iOS products using Swift, SwiftUI, UIKit, Objecti
 ## Key Pages
 
 - Portfolio: https://praveshdubey99.github.io/
-- Resume: https://praveshdubey99.github.io/assets/Pravesh_Kumar_Resume.docx
+- Resume (PDF): https://praveshdubey99.github.io/assets/Pravesh_Kumar_Senior-iOS-Developer.pdf
 - LinkedIn: https://www.linkedin.com/in/pravesh-dubey-ios/
 - GitHub: https://github.com/praveshdubey99
 
