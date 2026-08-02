@@ -157,7 +157,7 @@
                  --font-mono: 'Geist Mono', 'SF Mono', ui-monospace, 'JetBrains Mono', monospace;
                  --maxw: 1200px;
                  --gutter: clamp(20px, 5vw, 64px);
-                 --section-y: clamp(72px, 11vh, 150px);
+                 --section-y: clamp(48px, 7vh, 96px);
                  --r-sm: 10px;
                  --r-md: 16px;
                  --r-lg: 24px;
@@ -1204,6 +1204,20 @@
                      left: 0;
                  }
              }
+
+             /* ---- LinkedIn posts ---- */
+             .li-embed {
+                 margin-top: 40px;
+                 border: 1px solid var(--line);
+                 border-radius: var(--r-md);
+                 overflow: hidden;
+                 min-height: 400px;
+             }
+
+             .li-follow {
+                 margin-top: 28px;
+                 text-align: center;
+             }
     </style>
 </head>
 <body>
@@ -1218,6 +1232,7 @@
             <a href="#experience">Experience</a>
             <a href="#skills">Stack</a>
             <a href="#work">Work</a>
+            <a href="#posts">Posts</a>
             <a href="#contact">Contact</a>
         </div>
         <div class="nav-actions">
@@ -1435,6 +1450,24 @@
                 </div>
             </div>
         </section>
+
+        <!-- ============ LINKEDIN POSTS ============ -->
+        <section class="section wrap" id="posts" data-screen-label="Posts">
+            <p class="eyebrow reveal">Writing &amp; posts</p>
+            <h2 class="section-title reveal" data-d="1">Latest from LinkedIn.</h2>
+            <p class="section-lead reveal" data-d="2">Notes on iOS engineering, leadership, and shipping — straight from my feed.</p>
+            <div class="li-embed">
+                <div class="sk-ww-linkedin-profile-post" data-embed-id="25702021"></div>
+                <script src="https://widgets.sociablekit.com/linkedin-profile-posts/widget.js" defer></script>
+            </div>
+            <div class="li-follow reveal">
+                <a class="btn btn-ghost" href="https://www.linkedin.com/in/pravesh-dubey-ios/" target="_blank" rel="noopener">
+                    <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.13 1.45-2.13 2.94v5.67H9.36V9h3.41v1.56h.05c.47-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.55V9h3.57v11.45zM22.22 0H1.77C.8 0 0 .78 0 1.74v20.52C0 23.22.8 24 1.77 24h20.45c.98 0 1.78-.78 1.78-1.74V1.74C24 .78 23.2 0 22.22 0z"></path></svg>
+                    Follow me on LinkedIn
+                </a>
+            </div>
+        </section>
+
         <!-- ============ CONTACT ============ -->
         <section class="section wrap" id="contact" data-screen-label="Contact">
             <div class="contact reveal">
